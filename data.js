@@ -1,0 +1,3 @@
+var fundu={
+ variables:['empty']
+}

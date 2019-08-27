@@ -1,0 +1,24 @@
+body{
+	background-image: url(dow.jpg);
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-size: 2vw;
+	line-height: 2em;
+	text-align: center;
+}
+input{
+	font-size: 2vw;
+}
+.red{
+	color: red;
+}
+.green{
+	color: rgb(31, 255, 1);
+}
+input{
+	background-color: rgba(29, 134, 253, 0.616);
+}
+input[type="submit"]{
+	background-color: rgb(11, 43, 68);
+}
