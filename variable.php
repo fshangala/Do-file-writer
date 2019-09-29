@@ -37,7 +37,10 @@
 				<input type="submit" value="Generate">
             </form>
             <a href="index.html">Done</a><br>
-            <a href="entry.php?file=<?php echo $_GET["file"]; ?>&obs=1">Enter data</a>
+			<form action="entry.php?file=<?php echo $_GET["file"]; ?>&obs=1" method="post">
+				<input id="ent" type="hidden" name="arr">
+				<input type="submit" value="Enter data">
+			</form>
 		</div>
         <script>
         setInterval(load, 100);
@@ -48,6 +51,9 @@
         if(leng.length > 32){document.getElementById("error").innerHTML = "<span class='red'>Variable name too long</span>";
         } else {document.getElementById("error").innerHTML = "<span class='green'>Variable name is ok</span>";}
         }
+	
+	var ent = JSON.stringify(fundu.variables);
+	document.getElementById("ent").innerHTML = ent;
         </script>
 	</body>
 </html>
