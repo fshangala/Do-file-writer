@@ -4,7 +4,9 @@ if(file_exists($_POST["name"].".do")){
     echo "<a href='index.html'>Choose a different file name</a> ";
     echo "or <a href='variable.php?file=".$_POST["name"]."&vnum=1'>Write to this file</a>";
 } else{
-    $file_name = $_POST["name"].".do";
+    $tmp_name = $_POST["name"];
+    $tmp_name = str_replace(" ", "_", $tmp_name);
+    $file_name = $tmp_name.".do";
     $do_file = fopen($file_name, "a");
     $txt = "//created by DOW (Do-File writer) Funduluka Shangala https://dow.cleverapps.io\n\n";
     fwrite($do_file, $txt);
