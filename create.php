@@ -6,7 +6,7 @@ if(file_exists($_POST["name"].".do")){
 } else{
     $file_name = $_POST["name"].".do";
     $do_file = fopen($file_name, "a");
-    $txt = "//created by DOW (Do-File writer) Funduluka Shangala\n";
+    $txt = "//created by DOW (Do-File writer) Funduluka Shangala https://dow.cleverapps.io\n\n";
     fwrite($do_file, $txt);
     fclose($do_file);
     
