@@ -1,7 +1,7 @@
 <?php
     $js_name = "data.js";
     $file_name = $_POST["file_name"].".do";
-    $variable = $_POST["variable_name"];
+    $variable = nospace($_POST["variable_name"]);
     $txt1 = "generate ".$variable."=.\n";
     $do_file = fopen($file_name, "a") or die("<h1>Unable to write to file check php.ini file");
     if($_POST["comment"]!=""){
@@ -79,6 +79,11 @@
         $apply = "label values ".$variable." ".$label_name."\n";
         fwrite($do_file, $apply);
         fclose($do_file);
+    }
+
+    function nospace($name){
+        $name2 = str_replace(" ", "_", $name);
+        return $name2;
     }
 
     $i = $_POST["vnum"] - 1;
